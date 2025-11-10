@@ -1,0 +1,34 @@
+[
+    {
+        "title": "Real-time Chat (Go + WebSockets)",
+        "description": "Private messaging, typing indicators, server-side sessions; SQLite for storage.",
+        "tags": [
+            "Go",
+            "WebSockets",
+            "SQLite"
+        ],
+        "website": "https://example-chat.fly.dev",
+        "repo": "https://github.com/aammar/your-chat-repo",
+        "video": "/videos/sample.mp4"
+    },
+    {
+        "title": "Rust Shell",
+        "description": "Unix-like shell with ls, mkdir, cd, job control, colored output, symlink handling.",
+        "tags": [
+            "Rust",
+            "Systems"
+        ],
+        "repo": "https://github.com/aammar/your-rust-shell",
+        "video": "/videos/sample.mp4"
+    },
+    {
+        "title": "Traffic Simulation (Java)",
+        "description": "Chaikin smoothing, intersection logic, 60 FPS loop, keyboard controls.",
+        "tags": [
+            "Java",
+            "Graphics"
+        ],
+        "repo": "https://github.com/aammar/jraffic",
+        "video": "/videos/sample.mp4"
+    }
+]

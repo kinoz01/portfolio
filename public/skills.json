@@ -1,0 +1,14 @@
+{
+    "technical": [
+      { "name": "Golang",      "src": "/images/tech/golang.svg" },
+      { "name": "Rust",        "src": "/images/tech/rust.svg" },
+      { "name": "Java",        "src": "/images/tech/java.svg" },
+      { "name": "Docker",      "src": "/images/tech/docker.svg" },
+      { "name": "Kubernetes",  "src": "/images/tech/kubernetes.svg" },
+      { "name": "Linux",       "src": "/images/tech/linux.svg" },
+      { "name": "NGINX",       "src": "/images/tech/nginx.svg" },
+      { "name": "SQLite",      "src": "/images/tech/sqlite.svg" },
+      { "name": "Postgres",    "src": "/images/tech/postgres.svg" }
+    ]
+  }
+  
