@@ -2,6 +2,7 @@
     {
         "title": "Real-time Chat (Go + WebSockets)",
         "description": "Private messaging, typing indicators, server-side sessions; SQLite for storage.",
+        "description_fr": "Messagerie privée, indicateurs de frappe, sessions côté serveur ; stockage SQLite.",
         "tags": [
             "Go",
             "WebSockets",
@@ -14,6 +15,7 @@
     {
         "title": "Rust Shell",
         "description": "Unix-like shell with ls, mkdir, cd, job control, colored output, symlink handling.",
+        "description_fr": "Shell type Unix avec ls, mkdir, cd, gestion des jobs, sortie colorée et liens symboliques.",
         "tags": [
             "Rust",
             "Systems"
@@ -24,6 +26,7 @@
     {
         "title": "Traffic Simulation (Java)",
         "description": "Chaikin smoothing, intersection logic, 60 FPS loop, keyboard controls.",
+        "description_fr": "Lissage de Chaikin, logique d'intersections, boucle 60 FPS et contrôles clavier.",
         "tags": [
             "Java",
             "Graphics"

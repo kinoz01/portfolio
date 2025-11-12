@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   width="800px"
+   height="800px"
+   viewBox="0 0 3618.6 3618.6"
+   id="Layer_2"
+   version="1.1"
+   sodipodi:docname="react.svg"
+   inkscape:version="1.3.2 (1:1.3.2+202311252150+091e20ef0f)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.33764349"
+     inkscape:cx="-211.76182"
+     inkscape:cy="801.14087"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="0"
+     inkscape:window-y="26"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Layer_2" />
+  <style
+     id="style1">.st0{fill:#222}.st1{fill:#00d8ff}.st2{fill:none;stroke:#00d8ff;stroke-width:144.7456;stroke-miterlimit:10}</style>
+  <circle
+     class="st1"
+     cx="1818.0258"
+     cy="1879.8492"
+     r="317.23056"
+     id="circle1"
+     style="stroke-width:1.04835" />
+  <path
+     class="st2"
+     d="m 1818.0259,1234.9047 c 425.8395,0 821.4866,61.1188 1119.7421,163.7522 359.3742,123.7052 580.3662,311.2549 580.3662,481.0876 0,176.9613 -234.2012,376.2526 -620.0987,504.0464 -291.7556,96.6578 -675.7661,147.1883 -1080.0096,147.1883 -414.5174,0 -806.9146,-47.3854 -1102.02505,-148.2367 -373.31725,-127.5841 -598.18821,-329.3914 -598.18821,-502.998 0,-168.4698 211.03275,-354.5518 565.37488,-478.0474 299.40863,-104.3108 704.80538,-166.7924 1134.83838,-166.7924 z"
+     id="path2" />
+  <path
+     class="st2"
+     d="m 1256.6347,1559.264 c 212.7101,-368.9142 463.3705,-681.11265 701.3458,-888.16167 286.7236,-249.50718 559.609,-347.21335 706.6924,-262.40188 153.2687,88.37587 208.9361,390.82469 126.8503,789.09265 -62.0623,301.086 -210.0892,658.8877 -412.1062,1009.1412 -207.049,359.0597 -444.1856,675.3468 -678.9111,880.6136 -296.9974,259.6762 -584.2452,353.6083 -734.57855,266.9098 C 819.99712,3270.2752 764.22493,2994.5593 834.14984,2625.8548 893.27675,2314.0756 1041.7231,1931.7426 1256.6347,1559.264 Z"
+     id="path3" />
+  <path
+     class="st2"
+     d="M 1257.1589,2207.6682 C 1043.8198,1839.0685 898.5185,1466.0657 837.9239,1156.4881 764.95878,783.48539 816.53757,498.2295 963.51615,413.20836 c 153.16395,-88.69037 442.92775,14.15271 746.94905,284.10271 229.9031,204.11364 465.8865,511.07033 668.4277,861.00943 207.678,358.7452 363.3579,722.1031 423.8477,1027.9067 76.6343,387.0506 14.572,682.79 -135.6565,769.6982 -145.8254,84.3921 -412.5255,-4.9273 -697.0475,-249.7169 -240.2817,-206.8393 -497.4419,-526.3763 -712.8777,-898.5403 z"
+     id="path4" />
+</svg>

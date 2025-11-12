@@ -6,18 +6,21 @@
     <title>Ayoub Ammar — Portfolio</title>
     <meta name="description"
       content="Portfolio of Ayoub Ammar. Backend, systems, DevSecOps, and real-time apps." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preload" href="/styles.css?v=2" as="style" />
-    <link rel="stylesheet" href="/styles.css?v=2" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="preload" href="/styles.css" as="style" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <header class="site-header">
       <nav class="nav container">
-        <a class="logo" href="#top" aria-label="Home">AA</a>
+        <a class="site-logo" href="#top" aria-label="Home">
+          <img src="/images/home.svg" alt="Ayoub Ammar logo" />
+        </a>
 
         <ul class="nav-menu-left">
           <li><a data-i18n="nav.about" href="#about">About</a></li>
-          <li><a data-i18n="nav.formation" href="#formation">Formation</a></li>
+          <li><a data-i18n="nav.experience" href="#experience">Experience</a></li>
+          <li><a data-i18n="nav.education" href="#education">Education</a></li>
           <li><a data-i18n="nav.projects" href="#projects">Projects</a></li>
           <li><a data-i18n="nav.skills" href="#skills">Skills</a></li>
         </ul>
@@ -42,12 +45,15 @@
           </label>
 
           <button class="nav-toggle" aria-expanded="false"
-            aria-controls="nav-flyout">Menu</button>
+            aria-controls="nav-flyout" aria-label="Toggle navigation">
+            <span class="hamburger" aria-hidden="true"></span>
+          </button>
         </div>
 
         <ul id="nav-flyout" class="nav-menu-flyout" hidden>
           <li><a data-i18n="nav.about" href="#about">About</a></li>
-          <li><a data-i18n="nav.formation" href="#formation">Formation</a></li>
+          <li><a data-i18n="nav.experience" href="#experience">Experience</a></li>
+          <li><a data-i18n="nav.education" href="#education">Education</a></li>
           <li><a data-i18n="nav.projects" href="#projects">Projects</a></li>
           <li><a data-i18n="nav.skills" href="#skills">Skills</a></li>
         </ul>
@@ -58,7 +64,7 @@
       <!-- About -->
       <section id="about" class="container section">
         <div class="about-wrapper">
-          <img class="profile" src="/images/profile.jpg"
+          <img class="profile" src="/images/profile.png"
             alt="Profile photo of Ayoub Ammar" />
           <h1 class="title">Ayoub Ammar</h1>
 
@@ -70,14 +76,18 @@
           </p>
 
           <p class="about-text" data-i18n="about.blurb">
-            Backend and systems developer based in Morocco. I like clean
-            architectures, predictable performance, and shipping small, reliable
-            services.
+            Full-Stack Developer and Talent at 01Talent, passionate about 
+            building scalable, secure, and maintainable web applications. 
+            Skilled at collaborating with multidisciplinary 
+            teams to design clean, efficient solutions that balance 
+            performance and user experience. Continuously learning and 
+            exploring innovative technologies to enhance security and development 
+            workflows.
           </p>
 
           <!-- actions with icons and resume -->
           <div class="actions actions-icons">
-            <a class="btn" href="https://github.com/aammar" target="_blank"
+            <a class="btn" href="https://github.com/kinoz01" target="_blank"
               rel="noopener">
               <span data-i18n="about.github">GitHub</span>
               <span class="icon-right" aria-hidden="true">
@@ -87,7 +97,7 @@
               </span>
             </a>
 
-            <a class="btn" href="https://www.linkedin.com/" target="_blank"
+            <a class="btn" href="https://www.linkedin.com/in/ayoub-ammar-2a41362b3/?skipRedirect=true" target="_blank"
               rel="noopener">
               <span data-i18n="about.linkedin">LinkedIn</span>
               <span class="icon-right" aria-hidden="true">
@@ -109,80 +119,60 @@
           </div>
         </div>
       </section>
+      <div class="section-divider" aria-hidden="true"></div>
 
-      <!-- Formation -->
-      <section id="formation" class="container section">
-        <h2 class="section-title" data-i18n="formation.title">Formation</h2>
+      <!-- Experience -->
+      <section id="experience" class="container section">
+        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
 
         <ul class="timeline">
           <li>
             <time datetime="2025">2025</time>
             <div class="edu-card">
-              <img class="edu-logo" src="/images/edu/01talent.svg"
-                alt="01Talent logo" />
-              <div>
+              <div class="edu-body">
                 <div class="edu-line">
-                  <span data-i18n="formation.01.name">Talent at 01Talent</span>
-                  <span class="sep">·</span>
-                  <a href="https://01talent.com/" target="_blank" rel="noopener"
-                    data-i18n="formation.website">Website</a>
+                  <span data-i18n="experience.single.descPrefix">Talent at</span>
+                  <a class="edu-link" href="https://01talent.com/" target="_blank" rel="noopener"
+                    data-i18n="experience.single.link01">01Talent</a>,
+                  <a class="edu-link" href="https://zone01oujda.ma" target="_blank" rel="noopener"
+                    data-i18n="experience.single.linkZone">Zone01 Oujda</a>
+                  <span data-i18n="experience.single.descSuffix">site.</span>
                 </div>
                 <ul class="edu-points">
-                  <li data-i18n="formation.01.p1">Peer-learning, project-based
-                    software engineering.</li>
-                  <li data-i18n="formation.01.p2">Algorithms, data structures,
-                    Git workflows.</li>
-                  <li data-i18n="formation.01.p3">Backend services in Go/Rust,
-                    databases, WebSockets.</li>
+                  <li data-i18n="experience.single.p1">Peer-led engineering sprints with shared tooling.</li>
+                  <li data-i18n="experience.single.p2">Systems, backend, and frontend tracks blended together.</li>
+                  <li data-i18n="experience.single.p3">Daily reviews, ops drills, and product showcases.</li>
                 </ul>
               </div>
             </div>
           </li>
-
           <li>
-            <time datetime="2025">2025</time>
+            <time datetime="2021">2021 — Now</time>
             <div class="edu-card">
-              <img class="edu-logo" src="/images/edu/zone01.svg"
-                alt="Zone01 Oujda logo" />
-              <div>
+              <div class="edu-body">
                 <div class="edu-line">
-                  <span data-i18n="formation.z01.name">Zone01 Oujda</span>
-                  <span class="sep">·</span>
-                  <a href="https://learn.zone01oujda.ma" target="_blank"
-                    rel="noopener" data-i18n="formation.platform">Platform</a>
+                  <span data-i18n="experience.kdp.title">Kindle Direct Publishing</span>
                 </div>
                 <ul class="edu-points">
-                  <li data-i18n="formation.z01.p1">Real-time projects,
-                    collaboration, code reviews.</li>
-                  <li data-i18n="formation.z01.p2">Systems programming,
-                    networking basics.</li>
-                  <li data-i18n="formation.z01.p3">Frontend SPA with vanilla JS
-                    and Web APIs.</li>
+                  <li data-i18n="experience.kdp.p1">Write, edit, and publish niche tech content on KDP Marketplace.</li>
+                  <li data-i18n="experience.kdp.p2">Optimize covers, SEO, and royalties dashboards for steady revenue.</li>
                 </ul>
               </div>
             </div>
           </li>
-
           <li>
-            <time datetime="2022">2022</time>
+            <time datetime="2020">2020</time>
             <div class="edu-card">
-              <img class="edu-logo" src="/images/edu/umpi.svg"
-                alt="Université Mohammed Premier logo" />
-              <div>
+              <div class="edu-body">
                 <div class="edu-line">
-                  <span data-i18n="formation.uni.name">Physics Bachelor —
-                    Université Mohammed Premier</span>
+                  <span data-i18n="experience.pod.title">Print on Demand Business</span>
                   <span class="sep">·</span>
-                  <a href="https://ump.ac.ma/" target="_blank" rel="noopener"
-                    data-i18n="formation.website">Website</a>
+                  <a class="edu-link" href="https://www.instagram.com/" target="_blank"
+                    rel="noopener" data-i18n="experience.pod.link">Instagram</a>
                 </div>
                 <ul class="edu-points">
-                  <li data-i18n="formation.uni.p1">Mathematical modeling and
-                    measurement.</li>
-                  <li data-i18n="formation.uni.p2">Critical thinking,
-                    experimentation, data analysis.</li>
-                  <li data-i18n="formation.uni.p3">Problem solving under
-                    constraints.</li>
+                  <li data-i18n="experience.pod.p1">Launched bespoke merch lines, coordinating suppliers and mockups.</li>
+                  <li data-i18n="experience.pod.p2">Handled customer support, fulfillment, and marketing via Instagram DM.</li>
                 </ul>
               </div>
             </div>
@@ -190,9 +180,44 @@
         </ul>
       </section>
 
+      <!-- Education -->
+      <section id="education" class="container section">
+        <h2 class="section-title" data-i18n="education.title">Education</h2>
+
+        <ul class="timeline">
+          <li>
+            <time datetime="2019">2019</time>
+            <div class="edu-card">
+              <div class="edu-body">
+                <div class="edu-line">
+                  <span data-i18n="education.uni.name">Physics Bachelor —
+                    Université Mohammed Premier</span>
+                  <span class="sep">·</span>
+                  <a class="edu-link" href="http://fso.ump.ma/" target="_blank"
+                    rel="noopener" data-i18n="education.uni.faculty">FSO</a>
+                </div>
+                <ul class="edu-points">
+                  <li data-i18n="education.uni.p2">Critical thinking,
+                    experimentation, data analysis.</li>
+                  <li data-i18n="education.uni.p1">Mathematical modeling and
+                    measurement.</li>
+                  <li data-i18n="education.uni.p3">Problem solving under
+                    constraints.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
+      <div class="section-divider" aria-hidden="true"></div>
+
       <!-- Projects -->
       <section id="projects" class="container section">
         <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+        <div id="project-filters" class="project-filter-select" hidden>
+          <label for="project-filter" data-i18n="projects.filterLabel">Filter</label>
+          <select id="project-filter" aria-label="Filter projects"></select>
+        </div>
         <div id="projects-grid" class="grid cards" aria-live="polite"></div>
       </section>
 
@@ -200,9 +225,19 @@
       <section id="skills" class="container section">
         <h2 class="section-title" data-i18n="skills.title">Skills</h2>
         <div class="skills-grid">
-          <div>
-            <h3 class="sub-title" data-i18n="skills.tech">Technical</h3>
-            <div id="tech-logos" class="logo-grid" aria-live="polite"></div>
+          <div class="skills-tech">
+            <div class="skill-block">
+              <h3 class="sub-title" data-i18n="skills.fullstack">Full Stack Development</h3>
+              <div id="skills-fullstack" class="logo-grid" aria-live="polite"></div>
+            </div>
+            <div class="skill-block">
+              <h3 class="sub-title" data-i18n="skills.programming">Programming &amp; Development</h3>
+              <div id="skills-programming" class="logo-grid"></div>
+            </div>
+            <div class="skill-block">
+              <h3 class="sub-title" data-i18n="skills.tools">Tools &amp; Platforms</h3>
+              <div id="skills-tools" class="logo-grid"></div>
+            </div>
           </div>
           <div>
             <h3 class="sub-title" data-i18n="skills.soft">Soft skills</h3>
@@ -222,10 +257,14 @@
       <div class="container">
         <p>© <span id="year"></span> Ayoub Ammar</p>
         <div class="footer-links">
-          <a href="https://github.com/aammar" target="_blank"
-            rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/" target="_blank"
-            rel="noopener">LinkedIn</a>
+          <a href="https://github.com/aammar" target="_blank" rel="noopener"
+            aria-label="GitHub">
+            <img src="/icons/github.svg" alt="GitHub icon" />
+          </a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener"
+            aria-label="LinkedIn">
+            <img src="/icons/linkedin.svg" alt="LinkedIn icon" />
+          </a>
         </div>
       </div>
     </footer>
@@ -250,7 +289,9 @@
           id="close-resume">×</button>
         <h3 id="resume-title" class="modal-title"
           data-i18n="about.resume">Resume</h3>
-        <iframe src="/resume.pdf" title="Resume PDF" class="pdf-frame"></iframe>
+        <iframe id="resume-frame" src="about:blank"
+          data-src="/Resume_AyoubAmmar.pdf" title="Resume PDF"
+          class="pdf-frame"></iframe>
       </div>
     </div>
 
