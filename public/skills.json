@@ -10,8 +10,8 @@
     "programming": [
         { "name": "Golang", "src": "/images/tech/go.svg" },
         { "name": "JavaScript", "src": "/images/tech/js.png" },
-        { "name": "Rust", "src": "/images/tech/rust.svg" },
         { "name": "Java", "src": "/images/tech/java.png" },
+        { "name": "Rust", "src": "/images/tech/rust.svg" },
         { "name": "TypeScript", "src": "/images/tech/ts.svg" }
     ],
     "tools": [

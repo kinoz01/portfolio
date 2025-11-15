@@ -17,25 +17,27 @@ const I18N = {
         experience: {
             title: 'Experience',
             single: {
-                title: 'Talent at 01Talent, Zone01 Oujda site.',
+                title: 'Talent at 01Talent - Zone01 Oujda campus.',
                 descPrefix: 'Talent at',
-                descSuffix: 'site.',
+                descSuffix: 'campus',
                 link01: '01Talent',
                 linkZone: 'Zone01 Oujda',
-                p1: 'Peer-led engineering sprints with shared tooling.',
-                p2: 'Systems, backend, and frontend tracks blended together.',
-                p3: 'Daily reviews, ops drills, and product showcases.'
+                p1: 'An intensive, project-based software engineering curriculum focused on problem-solving, algorithms, and real-world development challenges.',
+                p2: 'Built multiple full-stack applications using modern technologies, emphasizing clean architecture, security, and maintainability.',
+                p3: 'Collaborated with diverse teams through peer-learning, pair-programming, code reviews and audits',
+                p4: 'Developed strong autonomy and adaptability by learning new tools, languages, and frameworks through self-directed and challenge-driven tasks.'
             },
             kdp: {
-                title: 'Kindle Direct Publishing',
-                p1: 'Write, edit, and publish niche tech content on KDP Marketplace.',
-                p2: 'Optimize covers, SEO, and royalties dashboards for steady revenue.'
+                title: 'Running a small publishing business',
+                p1: 'Analyzed market data and user feedback to optimize product listings, improve visibility, and streamline end-to-end publishing processes.',
+                p2: 'Built and maintained small publishing workflows using digital tools for content creation, editing, formatting, and distribution on the KDP platform.'
             },
             pod: {
-                title: 'Print on Demand Business',
+                title: 'Starting a small Print on Demand business.',
                 link: 'Instagram',
-                p1: 'Launched bespoke merch lines, coordinating suppliers and mockups.',
-                p2: 'Handled customer support, fulfillment, and marketing via Instagram DM.'
+                p1: 'Designed and developed a small e-commerce website to showcase Print-on-Demand products, integrating product catalogs, branding, and streamlined navigation.',
+                p2: 'Used digital tools and analytics to optimize product visibility, streamline operations, and improve conversion rates across sales channels.',
+                p3: 'Built and managed the full Print-on-Demand workflow, from product design and digital asset preparation to online listing and order fulfillment.'
             }
         },
         education: {
@@ -68,25 +70,27 @@ const I18N = {
         experience: {
             title: 'Expérience',
             single: {
-                title: 'Talent chez 01Talent, site Zone01 Oujda.',
+                title: 'Talent chez 01Talent, campus Zone01 Oujda.',
                 descPrefix: 'Talent chez',
-                descSuffix: '.',
+                descSuffix: 'campus',
                 link01: '01Talent',
                 linkZone: 'Zone01 Oujda',
-                p1: 'Sprints d’ingénierie en pair programming avec outils partagés.',
-                p2: 'Parcours systèmes, backend et frontend fusionnés.',
-                p3: 'Revues quotidiennes, exercices ops et démos produits.'
+                p1: 'Programme intensif d’ingénierie logicielle orienté projets, axé sur la résolution de problèmes, les algorithmes et des défis réels.',
+                p2: 'Création de plusieurs applications full-stack avec des technologies modernes, en privilégiant architecture claire, sécurité et maintenabilité.',
+                p3: 'Collaboration avec des équipes variées via peer-learning, pair programming, revues de code et audits.',
+                p4: 'Renforcement de l’autonomie et de l’adaptabilité en apprenant de nouveaux outils, langages et frameworks à travers des défis auto-dirigés.'
             },
             kdp: {
-                title: 'Kindle Direct Publishing',
-                p1: 'Rédaction et publication de contenus techniques sur KDP.',
-                p2: 'Optimisation des couvertures, SEO et royalties pour un revenu stable.'
+                title: 'Gestion d’une petite activité d’édition',
+                p1: 'Analyse des données de marché et des retours utilisateurs pour optimiser les fiches produits, renforcer la visibilité et fluidifier les processus de publication de bout en bout.',
+                p2: 'Mise en place et maintenance de workflows de publication légers avec des outils numériques pour créer, éditer, mettre en forme et distribuer sur la plateforme KDP.'
             },
             pod: {
-                title: 'Entreprise Print on Demand',
+                title: 'Création d’une petite entreprise Print on Demand',
                 link: 'Instagram',
-                p1: 'Création de collections personnalisées en coordonnant fournisseurs et maquettes.',
-                p2: 'Support client, logistique et marketing via Instagram.'
+                p1: 'Conception et développement d’un petit site e-commerce pour présenter les produits Print-on-Demand, avec catalogues, branding et navigation fluide.',
+                p2: 'Utilisation d’outils numériques et d’analyses pour améliorer la visibilité produit, fluidifier les opérations et augmenter les conversions sur les canaux de vente.',
+                p3: 'Mise en place et gestion du workflow Print-on-Demand de bout en bout : design produit, préparation des assets numériques, mise en ligne et exécution des commandes.'
             }
         },
         education: {

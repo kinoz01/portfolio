@@ -498,7 +498,12 @@ body {
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 25px
+    margin-bottom: 25px;
+    font-weight: 600;
+    color: var(--accent-3);
+}
+:root[data-theme="light"] .edu-line {
+    color: var(--accent);
 }
 
 .edu-line .sep {
@@ -522,7 +527,7 @@ body {
 
 .edu-body {
     width: 100%;
-    max-width: 520px;
+    max-width: 600px;
 }
 
 .edu-points {
@@ -536,7 +541,7 @@ body {
 .edu-points li {
     position: relative;
     padding-left: 20px;
-    margin-bottom: 0px;
+    margin-bottom: 6px;
 }
 
 .edu-points li::before {
