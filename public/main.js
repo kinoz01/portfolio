@@ -43,7 +43,7 @@ const I18N = {
         education: {
             title: 'Education',
             uni: {
-                name: 'Physics Bachelor — Université Mohammed Premier',
+                name: "Bachelor's in Physics — Université Mohammed Premier",
                 faculty: 'FSO',
                 p1: 'Mathematical modeling and measurement.',
                 p2: 'Critical thinking, experimentation, data analysis.',
@@ -96,7 +96,7 @@ const I18N = {
         education: {
             title: 'Éducation',
             uni: {
-                name: 'Licence Physique — Université Mohammed Premier',
+                name: 'Licence en Physique — Université Mohammed Premier',
                 faculty: 'FSO',
                 p1: 'Modélisation mathématique et mesures.',
                 p2: 'Esprit critique, expérimentation, analyse de données.',
