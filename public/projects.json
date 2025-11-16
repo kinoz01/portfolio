@@ -1,24 +1,25 @@
 [
     {
-        "title": "Real-time Chat (Go + WebSockets)",
-        "description": "Private messaging, typing indicators, server-side sessions; SQLite for storage.",
-        "description_fr": "Messagerie privée, indicateurs de frappe, sessions côté serveur ; stockage SQLite.",
+        "title": "dwi",
+        "description": "A single-page forum application (SPA) built with Go, SQLite, and vanilla JavaScript, with real-time chat, post feeds, and notifications.",
+        "description_fr": "Une application de forum monopage (SPA) développée avec Go, SQLite et JavaScript pur, intégrant un chat en temps réel, des flux de publications et des notifications.",
         "tags": [
             "Go",
             "WebSockets",
-            "SQLite"
+            "SQLite",
+            "JS"
         ],
-        "website": "https://example-chat.fly.dev",
-        "repo": "https://github.com/aammar/your-chat-repo",
-        "video": "/videos/sample.mp4"
+        "website": "https://dwi.fly.dev",
+        "repo": "https://github.com/kinoz01/dwi",
+        "video": "/videos/dwi.webm"
     },
     {
-        "title": "Rust Shell",
+        "title": "rustsh",
         "description": "Unix-like shell with ls, mkdir, cd, job control, colored output, symlink handling.",
         "description_fr": "Shell type Unix avec ls, mkdir, cd, gestion des jobs, sortie colorée et liens symboliques.",
         "tags": [
             "Rust",
-            "Systems"
+            "Linux"
         ],
         "repo": "https://github.com/aammar/your-rust-shell",
         "video": "/videos/sample.mp4"
