@@ -317,6 +317,12 @@ body {
     color: #2e3744
 }
 
+.link-accent {
+    color: #6aa7ff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
 .actions {
     display: flex;
     gap: 10px;
@@ -598,6 +604,14 @@ body {
     margin: 0;
 }
 
+:root[data-theme="dark"] .logo-grid .logo img[src$="rust.svg"] {
+    filter: brightness(0) invert(1);
+}
+
+:root[data-theme="light"] .logo-grid .logo img[src$="rust.svg"] {
+    filter: contrast(1.05) brightness(.95);
+}
+
 .logo-grid .logo-label {
     font-size: 15px;
     color: var(--muted);
@@ -660,7 +674,8 @@ body {
     background: rgba(0, 0, 0, .6);
     display: grid;
     place-items: center;
-    padding: 20px
+    padding: 20px;
+    z-index: 40;
 }
 
 .modal[hidden] {
@@ -704,6 +719,23 @@ body {
     border: none;
     border-radius: 12px;
     background: var(--bg)
+}
+
+.resume-fallback {
+    margin-top: 12px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    background: var(--surface);
+}
+
+.resume-fallback .btn {
+    min-width: 200px;
 }
 
 .fade-in {

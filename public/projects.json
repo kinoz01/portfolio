@@ -14,6 +14,18 @@
         "video": "/videos/dwi.webm"
     },
     {
+        "title": "Space Invaders",
+        "description": "Browser-based Space Invaders remake built with vanilla JS and a lightweight Go service for scoring and deployment glue.",
+        "description_fr": "Remake de Space Invaders jouable dans le navigateur, codé en JavaScript vanilla et appuyé par un service Go léger pour le scoring et le déploiement.",
+        "tags": [
+            "JS",
+            "Go"
+        ],
+        "website": "https://spaceinvaders.fly.dev",
+        "repo": "https://github.com/kinoz01/Space-Invaders",
+        "video": "/videos/space-invaders.webm"
+    },
+    {
         "title": "rustsh",
         "description": "Unix-like shell with ls, mkdir, cd, job control, colored output, symlink handling.",
         "description_fr": "Shell type Unix avec ls, mkdir, cd, gestion des jobs, sortie colorée et liens symboliques.",

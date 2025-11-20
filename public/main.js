@@ -3,7 +3,7 @@ const $$ = (q, el = document) => [...el.querySelectorAll(q)];
 
 const STATE = {
     lang: localStorage.getItem('lang') || 'en',
-    theme: localStorage.getItem('theme') || 'dark',
+    theme: localStorage.getItem('theme') || 'light',
 };
 
 const I18N = {
@@ -11,7 +11,7 @@ const I18N = {
         nav: { about: 'About', experience: 'Experience', education: 'Education', projects: 'Projects', skills: 'Skills' },
         about: {
             prefix: 'I am a ',
-            blurb: 'Full-Stack Developer and Talent at 01Talent, focused on creating reliable and secure web applications. I enjoy working with diverse teams to develop solutions that are efficient, reliable, and easy to maintain. Always looking to learn new tools and explore better ways to improve both security and development processes.',
+            blurb: `Software Developer and Talent at <a class="link-accent" href="https://01talent.com/" target="_blank" rel="noopener">01Talent</a>, focused on creating reliable and secure web applications. I enjoy working with diverse teams to develop solutions that are efficient, reliable, and easy to maintain. Always looking to learn new tools and explore better ways to improve both security and development processes.`,
             github: 'GitHub', linkedin: 'LinkedIn', resume: 'Resume'
         },
         experience: {
@@ -64,7 +64,7 @@ const I18N = {
         nav: { about: 'À propos', experience: 'Expérience', education: 'Éducation', projects: 'Projets', skills: 'Compétences' },
         about: {
             prefix: 'Je suis un ',
-            blurb: 'Développeur Full-Stack et Talent chez 01Talent, concentré sur la création d’applications web fiables et sécurisées. J’aime travailler avec des équipes variées pour construire des solutions performantes et faciles à maintenir. Toujours curieux d’apprendre de nouveaux outils et d’améliorer la sécurité ainsi que les processus de développement.',
+            blurb: `Développeur logiciel et Talent chez <a class="link-accent" href="https://01talent.com/" target="_blank" rel="noopener">01Talent</a>, concentré sur la création d’applications web fiables et sécurisées. J’aime travailler avec des équipes variées pour construire des solutions performantes et faciles à maintenir. Toujours curieux d’apprendre de nouveaux outils et d’améliorer la sécurité ainsi que les processus de développement.`,
             github: 'GitHub', linkedin: 'LinkedIn', resume: 'CV'
         },
         experience: {
@@ -118,12 +118,12 @@ const I18N = {
 // Typewriter lines (with colors)
 const TYPE_LINES = {
     en: [
-        { text: 'Full-Stack Developer', color: 'var(--accent)' },
+        { text: 'Software Developer', color: 'var(--accent)' },
         { text: 'DevSecOps Enthusiast', color: 'var(--accent-2)' },
         { text: 'Small Business Owner', color: 'var(--accent-3)' },
     ],
     fr: [
-        { text: 'Développeur Full-Stack', color: 'var(--accent)' },
+        { text: 'Développeur logiciel', color: 'var(--accent)' },
         { text: 'Passionné de DevSecOps', color: 'var(--accent-2)' },
         { text: 'Entrepreneur', color: 'var(--accent-3)' },
     ]
@@ -155,6 +155,11 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle?.addEventListener('click', () => {
         const open = !flyout.hasAttribute('hidden');
         open ? closeFlyout() : openFlyout();
+    });
+    document.addEventListener('click', (e) => {
+        if (!flyout || flyout.hasAttribute('hidden')) return;
+        if (toggle?.contains(e.target) || flyout.contains(e.target)) return;
+        closeFlyout();
     });
     const desktopMQ = window.matchMedia('(min-width: 761px)');
     const handleDesktopChange = (e) => { if (e.matches) closeFlyout(); };
@@ -217,13 +222,27 @@ document.addEventListener('DOMContentLoaded', () => {
     $$('.card').forEach(c => io.observe(c));
 });
 
+function resolveI18N(path) {
+    const parts = path.split('.');
+    let cur = I18N[STATE.lang];
+    for (const p of parts) {
+        if (cur && p in cur) cur = cur[p];
+        else { cur = null; break; }
+    }
+    return typeof cur === 'string' ? cur : null;
+}
+
 function applyI18N() {
-    $$('[data-i18n]').forEach(el => {
-        const path = el.getAttribute('data-i18n').split('.');
-        let cur = I18N[STATE.lang];
-        for (const p of path) { if (cur && p in cur) cur = cur[p]; else { cur = null; break; } }
-        if (typeof cur === 'string') el.textContent = cur;
-    });
+    const applyAttr = (attr, setter) => {
+        $$(`[${attr}]`).forEach(el => {
+            const path = el.getAttribute(attr);
+            if (!path) return;
+            const val = resolveI18N(path);
+            if (val != null) setter(el, val);
+        });
+    };
+    applyAttr('data-i18n', (el, val) => { el.textContent = val; });
+    applyAttr('data-i18n-html', (el, val) => { el.innerHTML = val; });
 }
 
 let typewriterStop = null;
@@ -409,34 +428,65 @@ function wireResumeModal() {
     const close = $('#close-resume');
     const frame = $('#resume-frame');
     const resumeSrc = frame?.getAttribute('data-src');
+    const mobileMedia = window.matchMedia('(max-width: 640px)');
     let resumeBlobUrl = null;
     let loadingResume = false;
-    let loadError = false;
+    let loadFailed = false;
+
+    const showFallback = () => {
+        if (!frame || !resumeSrc || loadFailed) return;
+        const fallback = document.createElement('div');
+        fallback.className = 'resume-fallback';
+        const text = document.createElement('p');
+        text.textContent = label(
+            'Unable to display the resume preview on this device.',
+            'Impossible d’afficher l’aperçu du CV sur cet appareil.'
+        );
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'btn primary';
+        btn.textContent = label('Open in new tab', 'Ouvrir dans un nouvel onglet');
+        btn.addEventListener('click', () => {
+            if (!resumeSrc) return;
+            window.open(resumeSrc, '_blank', 'noopener');
+        });
+        fallback.append(text, btn);
+        frame.replaceWith(fallback);
+        loadFailed = true;
+    };
 
     async function ensureResumeLoaded() {
-        if (!frame || !resumeSrc || resumeBlobUrl || loadError) return;
-        if (loadingResume) return;
+        if (!frame || !resumeSrc || resumeBlobUrl || loadFailed || loadingResume) return;
         loadingResume = true;
         try {
             const resp = await fetch(resumeSrc);
             if (!resp.ok) throw new Error('Failed to fetch resume');
             const blob = await resp.blob();
-            const file = new File([blob], 'Resume-AyoubAmmar.pdf', { type: 'application/pdf' });
-            resumeBlobUrl = URL.createObjectURL(file);
+            resumeBlobUrl = URL.createObjectURL(blob);
             frame.src = resumeBlobUrl;
         } catch (err) {
-            loadError = true;
-            const notice = document.createElement('p');
-            notice.className = 'empty-state';
-            notice.innerHTML = `Unable to display the resume here. <a href="${resumeSrc}" class="edu-link" target="_blank" rel="noopener">Open in new tab</a>.`;
-            frame.replaceWith(notice);
+            showFallback();
         } finally {
             loadingResume = false;
         }
     }
 
+    const openExternally = () => {
+        if (!resumeSrc) return false;
+        const win = window.open(resumeSrc, '_blank', 'noopener');
+        return !!win;
+    };
+
     open.addEventListener('click', e => {
         e.preventDefault();
+        if (mobileMedia.matches) {
+            const ok = openExternally();
+            if (!ok) {
+                modal.hidden = false;
+                showFallback();
+            }
+            return;
+        }
         modal.hidden = false;
         ensureResumeLoaded();
     });
