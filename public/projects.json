@@ -15,7 +15,7 @@
     },
     {
         "title": "Space Invaders",
-        "description": "Browser-based Space Invaders remake built with vanilla JS and a lightweight Go service for scoring and deployment glue.",
+        "description": "Browser-based Space Invaders remake built with vanilla JS and a lightweight Go service for scoring and deployment.",
         "description_fr": "Remake de Space Invaders jouable dans le navigateur, codé en JavaScript vanilla et appuyé par un service Go léger pour le scoring et le déploiement.",
         "tags": [
             "JS",
