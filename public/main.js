@@ -1,9 +1,11 @@
 const $ = (q, el = document) => el.querySelector(q);
 const $$ = (q, el = document) => [...el.querySelectorAll(q)];
 
+const prefersDark = typeof window !== 'undefined' && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 const STATE = {
     lang: localStorage.getItem('lang') || 'en',
-    theme: localStorage.getItem('theme') || 'light',
+    // Default to system preference when no saved choice
+    theme: localStorage.getItem('theme') || (prefersDark ? 'dark' : 'light'),
 };
 
 const I18N = {
@@ -11,7 +13,7 @@ const I18N = {
         nav: { about: 'About', experience: 'Experience', education: 'Education', projects: 'Projects', skills: 'Skills' },
         about: {
             prefix: 'I am a ',
-            blurb: `Software Developer and Talent at <a class="link-accent" href="https://01talent.com/" target="_blank" rel="noopener">01Talent</a>, focused on creating reliable and secure web applications. I enjoy working with diverse teams to develop solutions that are efficient, reliable, and easy to maintain. Always looking to learn new tools and explore better ways to improve both security and development processes.`,
+            blurb: `Fullstack developer and Talent at <a class="link-accent" href="https://01talent.com/" target="_blank" rel="noopener">01Talent</a>, focused on creating reliable and secure web applications. I enjoy working with diverse teams to develop solutions that are efficient, reliable, and easy to maintain. Always looking to learn new tools and explore better ways to improve both security and development processes.`,
             github: 'GitHub', linkedin: 'LinkedIn', resume: 'Resume'
         },
         experience: {
@@ -118,7 +120,7 @@ const I18N = {
 // Typewriter lines (with colors)
 const TYPE_LINES = {
     en: [
-        { text: 'Software Developer', color: 'var(--accent)' },
+        { text: 'Fullstack developer', color: 'var(--accent)' },
         { text: 'DevSecOps Enthusiast', color: 'var(--accent-2)' },
         { text: 'Small Business Owner', color: 'var(--accent-3)' },
     ],
@@ -137,6 +139,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.documentElement.setAttribute('data-theme', STATE.theme);
     const themeSwitch = $('#theme-switch');
     themeSwitch.checked = STATE.theme === 'light';
+
+    // If user has not chosen a theme, follow system changes live
+    const systemMQ = window.matchMedia('(prefers-color-scheme: dark)');
+    const onSystemChange = (e) => {
+        if (!localStorage.getItem('theme')) {
+            STATE.theme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', STATE.theme);
+            themeSwitch.checked = STATE.theme === 'light';
+        }
+    };
+    if (systemMQ?.addEventListener) systemMQ.addEventListener('change', onSystemChange);
+    else if (systemMQ?.addListener) systemMQ.addListener(onSystemChange);
 
     // Mobile menu
     const toggle = $('.nav-toggle');

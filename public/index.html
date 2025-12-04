@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,6 +7,19 @@
     <meta name="description"
       content="Portfolio of Ayoub Ammar. Backend, systems, DevSecOps, and real-time apps." />
     <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <script>
+      // Set theme ASAP to avoid flash; defaults to system preference
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = stored || (prefersDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {
+          // noop
+        }
+      })();
+    </script>
     <link rel="preload" href="/styles.css" as="style" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
@@ -76,7 +89,7 @@
           </p>
 
           <p class="about-text" data-i18n-html="about.blurb">
-            Software Developer and Talent at 
+            Fullstack developer and Talent at 
             <a class="link-accent" href="https://01talent.com/" target="_blank" rel="noopener">01Talent</a>,
             passionate about building scalable, secure, and maintainable web applications.
             Skilled at collaborating with multidisciplinary teams to design clean, efficient
